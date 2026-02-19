@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops1
+  template:
+    metadata:
+      labels:
+        app: devops1
+    spec:
+      containers:
+        - name: devops1
+          image: jakubbyliniak/myapp:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_VERSION
+              value: "v1.0.0"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
