@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: devops1
-          image: jakubbyliniak/myapp:latest
+          image: jakubbyliniak/myapp:27bb9d8a8d968d4c57504da173263db47c558774
           ports:
             - containerPort: 3000
           env:
