@@ -5,7 +5,7 @@ const VERSION = process.env.APP_VERSION || 'v1.0.0';
 
 app.get('/', (req, res) => {
   res.json({ 
-    message: 'Hello from CI/CD pipeline!',
+    message: 'Hello from CI/CD pipeline! test pipeline',
     version: VERSION,
     hostname: require('os').hostname() // zobaczysz nazwę poda w K8s
   });
